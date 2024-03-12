@@ -1,0 +1,25 @@
+# What the coolest place to work based on paid time off days offered?
+
+SELECT company_name,
+CASE WHEN paid_time_off_days >= 10 THEN "cool place to work"
+WHEN paid_time_off_days >= 4 THEN "ok place"
+ELSE "sucks"
+END AS Great_Place
+FROM fortune_companies
+WHERE industry='Finance';
+
+
+# Which company has the least employee tenure?
+
+SELECT company_name, ROUND(avg_employee_tenure) AS Employee_Tenure
+FROM fortune_companies
+GROUP BY industry
+HAVING employees>=200;
+
+
+
+# Which industries have the least revenue and employees.
+
+SELECT company_name, min(revenue) AS Minimum
+FROM fortune_companies
+WHERE industry = 'Retail';
