@@ -1,3 +1,5 @@
+# Reviewed 2025
+
 #For this project, I downloaded Spotify data from Kaggle.
 #Then I created a table to indert Spotify data into.
 #Finally, I performed analytics on the data using SQL.
@@ -26,44 +28,56 @@ time_signature integer NOT NULL)
 #I then inserted the Spotify Data .csv into the table.
 #Next, I explored the data using the following SQL.
 
-SELECT * FROM BIT_DB.Spotifydata;
+SELECT * 
+FROM BIT_DB.Spotifydata;
+
 #By doing this I could see what was in the data.
 #Then I started my quieries.
 
 #First, I determined the average popularity, danceability, and energy by artist and track.
+
 SELECT artist_name, track_name, avg(popularity),avg(danceability),avg(energy)
 FROM BIT_DB.spotifydata
 GROUP BY artist_name, track_name;
 
 #Then I determined the time signatures by artist and track.
+
 SELECT track_name, artist_name, time_signature
 FROM BIT_DB.spotifydata
 ORDER BY time_signature desc
 LIMIT 20;
 
 #Then loudness limiting the response to 10.
+
 SELECT track_name, artist_name, loudness
 FROM BIT_DB.spotifydata
 ORDER BY loudness desc
 LIMIT 10;
 
 #Then average energy.
+
 SELECT track_name, artist_name, avg(energy)
 FROM BIT_DB.spotifydata
 GROUP BY track_name, artist_name;
 
 #Energy and tempo limiting the response to 20.
+
 SELECT track_name, artist_name, avg(energy), avg(tempo)
 FROM BIT_DB.spotifydata
-GROUP BY track_name, artist_name;
+GROUP BY track_name, artist_name
 LIMIT 20;
+
 #Tempo.
+
 SELECT track_name, artist_name, AVG(tempo)
 FROM BIT_DB.spotifydata
 GROUP BY artist_name, track_name;
 
 #And finally, I determined who the Top 10 artists are by popularity.
+
 SELECT track_name, artist_name, popularity
 FROM BIT_DB.Spotifydata
 ORDER BY popularity desc
 LIMIT 10;
+
+# Reviewing this was great!
