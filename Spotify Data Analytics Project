@@ -1,8 +1,8 @@
 # Reviewed 2025
 
-#For this project, I downloaded Spotify data from Kaggle.
-#Then I created a table to indert Spotify data into.
-#Finally, I performed analytics on the data using SQL.
+
+#First, I created a table to insert the Spotify data.
+#Then I performed analytics on the data using SQL.
 
 #Creating the table: 
 CREATE TABLE BIT_DB.Spotifydata (
@@ -34,7 +34,7 @@ FROM BIT_DB.Spotifydata;
 #By doing this I could see what was in the data.
 #Then I started my quieries.
 
-#First, I determined the average popularity, danceability, and energy by artist and track.
+#I determined the average popularity, danceability, and energy by artist and track.
 
 SELECT artist_name, track_name, avg(popularity),avg(danceability),avg(energy)
 FROM BIT_DB.spotifydata
